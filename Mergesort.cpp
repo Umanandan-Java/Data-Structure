@@ -38,8 +38,6 @@ void mergesort(vector<int> &arr,int l, int r){
 int main(){
     vector<int> arr={3,2,9,5,3,1};
     mergesort(arr,0,arr.size()-1);
-    for(int val:arr){
-        cout<<val<<" ";
-    }
+    
     return 0;
 }
