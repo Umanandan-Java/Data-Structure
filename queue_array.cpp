@@ -12,29 +12,25 @@ class queue{
         if(rear==sizeof(a)/sizeof(int)-1){
             cout<<"Queue is full!!!";
         }
-        else if(front ==-1 ) {
-            front=rear=0;
-            cout<<"Enter element:";
-            cin>>ele;
-            a[rear]=ele;
-        }
-        else{
-            rear++;
-            cout<<"Enter element:";
-            cin>>ele;
-            a[rear]=ele;
-        }
+        cout << "Enter element: ";
+        cin >> ele;
+        if (front == -1) front = 0; // If queue was empty, reset front
+        a[++rear] = ele;
+
     }
     void pop(){
-        if(rear==-1){
+        if(front==-1 || front>rear){
             cout<<"Queue is empty";
+            front = rear = -1;
+            return;
         }
         else{
             front++;
+            if(front>rear) front = rear = -1;
         }
     }
     void display(){
-        if(rear==-1){
+        if(front==-1 || front > rear){
             cout<<"Queue is empty!!";
         }
         else{
